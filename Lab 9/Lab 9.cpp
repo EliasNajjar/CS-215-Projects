@@ -26,7 +26,7 @@ int main()
     // then shuffle the cards
     Deck playDeck;
     playDeck.createDeck();
-    //playDeck.shuffleDeck();
+    playDeck.shuffleDeck();
 
     Card yourCards[HANDS];
     Card myCards[HANDS];
