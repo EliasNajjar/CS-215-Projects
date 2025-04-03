@@ -23,11 +23,12 @@ const char DIAMOND[] = "D";//"\x06";
 
 // the following works for the Unix system, including Mac OS
 /*
-const char SPADE[] = "\u2660";
-const char CLUB[] = "\u2663";
-const char HEART[] = "\u2665";
-const char DIAMOND[] = "\u2666";
+const char SPADE[] = u8"\u2660";
+const char CLUB[] = u8"\u2663";
+const char HEART[] = u8"\u2665";
+const char DIAMOND[] = u8"\u2666";
 */
+
 
 class Card
 {
