@@ -1,5 +1,5 @@
 /*
- * Course: CS215-00x
+ * Course: CS215-09
  * Project: Lab 10 (as the second part of Project 2)
  * Purpose: Testing the definition of Player class.
  *          First, it creates 52 cards on deck (no shuffle)

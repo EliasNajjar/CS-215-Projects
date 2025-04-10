@@ -1,3 +1,4 @@
+#pragma once
 /* File: deck.h
  * Course: CS215-09
  * Project: Project 2
@@ -34,6 +35,6 @@ public:
 
 private:
     vector<Card> deck;  // store the Card objects in the vector to present current cards on the deck
-                        // each Card object represents a valid card from standard 52-card game, no duplicate cards
+    // each Card object represents a valid card from standard 52-card game, no duplicate cards
 };
 #endif  /* DECK_H */

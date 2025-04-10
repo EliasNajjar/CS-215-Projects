@@ -1,10 +1,11 @@
+#pragma once
 /* File: player.h
  * Course: CS215-09
  * Project: Project 2
  * Purpose: the declaration for the Player class.
  *
  * Author: (your name)
- */
+*/
 #ifndef PLAYER_H
 #define PLAYER_H
 

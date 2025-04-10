@@ -1,4 +1,5 @@
-﻿/* File: card.h
+﻿#pragma once
+/* File: card.h
  * Course: CS215-09
  * Project: Project 2
  * Purpose: the declaration for the Card class.
@@ -76,4 +77,3 @@ private:
     // A point value of 1 is not used.
 };
 #endif  /* CARD_H */
-
