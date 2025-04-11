@@ -50,8 +50,8 @@ vector<Card> Player::dropCards() {
 
 // display cards at player's hand
 void Player::print() const {
-	for (list<Card>::const_iterator pos = cards.begin();pos != cards.end();pos++) { // for each card
-		pos->print();
+	for (Card c : cards) { // for each card
+		c.print();
 		cout << "\t";
 	}
 	cout << endl;
