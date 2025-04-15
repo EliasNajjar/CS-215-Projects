@@ -22,7 +22,7 @@ int main()
 {
     // Avoid magic numbers
     const int HANDS = 26; // each player holds 52/2 = 26 cards to begin the game
-    bool quitOption = false; // prompt quit between turns
+    bool quitOption = true; // prompt quit between turns
 
     // create an object of Deck class to represent standard 52-card deck
     // create a 52-card deck first
