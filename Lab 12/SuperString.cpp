@@ -22,8 +22,8 @@ void SuperString::setString(string input_str) {
 // Note that the private data member named str, has not been changed
 string SuperString::rev_loop() const {
     string rev;
-    for (int i = str.length() - 1;i >= 0;i--) {
-        rev += str[i];
+    for (int i = str.length() - 1;i >= 0;i--) { // for each element end to beginning
+        rev += str[i]; // add to string
     }
     return rev;
 }
@@ -32,11 +32,11 @@ string SuperString::rev_loop() const {
 // using recursion to implement
 // Note that the private data member named str, has not been changed
 string SuperString::rev_recursion() const {
-    if (str.length() < 2) {
+    if (str.length() < 2) { // if length is 1 or 0, no reversing needed
         return str;
     }
-    SuperString middle(str.substr(1, str.length() - 2));
-    return str[str.length() - 1] + middle.rev_recursion() + str[0];
+    SuperString middle(str.substr(1, str.length() - 2)); // assign SuperString with middle portion, to be reversed recursively
+    return str[str.length() - 1] + middle.rev_recursion() + str[0]; // return last, reversed middle, first
 }
 
 // return a reverse string
@@ -44,13 +44,13 @@ string SuperString::rev_recursion() const {
 // Note that the private data member named str, has not been changed
 string SuperString::rev_stack() const {
     stack<char> letters;
-    for (char i : str) {
+    for (char i : str) { // push each letter to the stack so that the last letter is on top
         letters.push(i);
     }
     string rev;
-    while (!letters.empty()) {
-        rev += letters.top();
-        letters.pop();
+    while (!letters.empty()) { // while there are letters in the stack
+        rev += letters.top(); // put the letter in rev
+        letters.pop(); // remove from stack
     }
     return rev;
 }
@@ -61,8 +61,9 @@ string SuperString::rev_stack() const {
 // calling member function to  implement
 // Note that the private data member named str, has not been changed
 bool SuperString::isPalindrome() const {
-    for (int i = 0;i < str.length() / 2;i++) {
-        if (str[i] != str[str.length() - i - 1]) {
+    //return str == rev_loop(); // simple solution
+    for (int i = 0;i < str.length() / 2;i++) { // we need to run through length / 2 iterations, for odd number length we do not need to check the middle
+        if (str[i] != str[str.length() - i - 1]) { // if earlier element does not equal later element, getting closer each iteration
             return false;
         }
     }
@@ -76,17 +77,15 @@ bool SuperString::isPalindrome() const {
 // Note that the private data member named str, has not been changed
 bool SuperString::isPalindrome_recursion() const
 {
+    //return str == rev_recursion(); // simple solution
     // base case
-    if (str.length() <= 1)
+    if (str.length() <= 1) // if length is less than 2, it is a palindrome
         return true;
-    else // recursive case
-    {
-        SuperString shorter(str.substr(1, str.length() - 2));
-        if (str[0] == str[str.length() - 1]) {
-            return shorter.isPalindrome_recursion();
-        }
-        return false;
+    SuperString shorter(str.substr(1, str.length() - 2)); // assign SuperString with middle of string
+    if (str[0] == str[str.length() - 1]) { // if first equals last
+        return shorter.isPalindrome_recursion(); // return if the middle is a palindrome
     }
+    return false;
 }
 
 // displays str, followed by a new line marker, 
