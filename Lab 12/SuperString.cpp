@@ -32,7 +32,7 @@ string SuperString::rev_loop() const {
 // using recursion to implement
 // Note that the private data member named str, has not been changed
 string SuperString::rev_recursion() const {
-    if (str.length() < 2) { // if length is 1 or 0, no reversing needed
+    if (str.length() <= 1) { // if length is 1 or 0, no reversing needed
         return str;
     }
     SuperString middle(str.substr(1, str.length() - 2)); // assign SuperString with middle portion, to be reversed recursively
@@ -82,10 +82,7 @@ bool SuperString::isPalindrome_recursion() const
     if (str.length() <= 1) // if length is less than 2, it is a palindrome
         return true;
     SuperString shorter(str.substr(1, str.length() - 2)); // assign SuperString with middle of string
-    if (str[0] == str[str.length() - 1]) { // if first equals last
-        return shorter.isPalindrome_recursion(); // return if the middle is a palindrome
-    }
-    return false;
+    return str[0] == str[str.length() - 1] && shorter.isPalindrome_recursion(); // return the first equals the last and if the middle is a palindrome
 }
 
 // displays str, followed by a new line marker, 
